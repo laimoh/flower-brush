@@ -1,0 +1,26 @@
+Flower Brush
+
+Demo: 
+https://flower-brush.superhi.com/
+
+Starting size: 20
+Background color: #111118
+
+let margin = 70; // distance from center of flower
+ let spacing = 50; // space between eahc petal multiplied by the counter
+
+depending on the num of petals you want to add run a loop
+      // 2PI multiplied by petal num/ counter divided by total petals = angle
+we are drawing a circle at this.x with a margin for the first petal added to (petal spacing * counter)
+
+for (let num = 0; num < this.numOPetals; num++) {
+   circle(this.x + (spacing * num) + margin, this.y, 10);
+}
+
+for (let num = 0; num < this.numOPetals; num++) {
+   let angle = TWO_PI * num / this.numOfPetals;
+   let px = 50 * cos(angle); //petal x direction away from center;
+   let py = 50 * sin(angle);// petal y direction
+
+   circle(this.x + px, this.y + py, 10);
+}
